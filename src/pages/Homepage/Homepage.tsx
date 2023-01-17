@@ -7,14 +7,20 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-
 import PersonIcon from "@mui/icons-material/Person";
 import MapIcon from "@mui/icons-material/Map";
 import CameraRollIcon from "@mui/icons-material/CameraRoll";
 
+import { useNavigate } from "react-router-dom";
+
 import { Page } from "../../components";
+import { ROUTE } from "../../router";
 
 export const Homepage = () => {
+  const navigate = useNavigate();
+  const navigateToCharacters = () => {
+    navigate(ROUTE.Characters);
+  };
   return (
     <Page
       styles={{
@@ -34,7 +40,7 @@ export const Homepage = () => {
 
         <List>
           <ListItem>
-            <ListItemButton>
+            <ListItemButton onClick={navigateToCharacters}>
               <ListItemIcon>
                 <PersonIcon />
               </ListItemIcon>

@@ -1,4 +1,4 @@
-import { AppBar, Box, Toolbar, Typography, Button } from "@mui/material";
+import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import { ROUTE } from "../../router";
 import { LinkWithoutStyles } from "../LinkWithoutStyles";
 
