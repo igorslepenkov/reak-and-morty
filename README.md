@@ -21,7 +21,6 @@ npm start
 ```
 - React
 - Redux-Toolkit
-- Redux-Saga
 - Axios
 - react-router-dom
 - MUI (5.11.4)
