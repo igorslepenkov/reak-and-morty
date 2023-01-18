@@ -11,7 +11,7 @@ Node version: 19.3.0
 
 ```
 git clone https://github.com/igorslepenkov/rick-and-morty.git
-git checkout redux-saga
+git checkout redux-thunk
 npm install
 npm start
 ```
