@@ -6,6 +6,7 @@ import {
 import { App } from "../App";
 import { Homepage } from "../pages";
 import { CharactersPage } from "../pages/CharactersPage";
+import { LocationsPage } from "../pages/LocationsPage";
 import { ROUTE } from "./routes";
 
 export const appRouter = createBrowserRouter(
@@ -13,6 +14,7 @@ export const appRouter = createBrowserRouter(
     <Route path={ROUTE.Home} element={<App />}>
       <Route index element={<Homepage />} />
       <Route path={ROUTE.Characters} element={<CharactersPage />} />
+      <Route path={ROUTE.Locations} element={<LocationsPage />} />
     </Route>
   )
 );

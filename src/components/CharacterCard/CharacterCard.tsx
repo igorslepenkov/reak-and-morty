@@ -6,11 +6,7 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
-import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
 import { ICharacter } from "../../types/characters";
-import { IEpisode } from "../../types/episodes";
 
 interface IProps {
   character: ICharacter;
@@ -20,7 +16,7 @@ export const CharacterCard = ({ character }: IProps) => {
   if (character) {
     return (
       <Grid item xs="auto" xl="auto">
-        <Card sx={{ maxWidth: 250 }}>
+        <Card sx={{ width: 250, height: 300 }}>
           <CardActionArea>
             <CardMedia
               component="img"

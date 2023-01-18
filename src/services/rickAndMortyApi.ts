@@ -51,10 +51,25 @@ class RickAndMortyApi {
     return data;
   };
 
-  getAllLocations = async () => {
-    const { data } = await this.API.get<IGetAllLocationSuccess>(
-      RickAndMortyEndpoint.Locations
-    );
+  getAllLocations = async (page?: number) => {
+    let data = null;
+
+    if (page) {
+      data = (
+        await this.API.get<IGetAllLocationSuccess>(
+          addOptionalQueryParametersToUrl(RickAndMortyEndpoint.Locations, {
+            page,
+          })
+        )
+      ).data;
+    } else {
+      data = (
+        await this.API.get<IGetAllLocationSuccess>(
+          RickAndMortyEndpoint.Locations
+        )
+      ).data;
+    }
+
     return data;
   };
 
@@ -65,10 +80,25 @@ class RickAndMortyApi {
     return data;
   };
 
-  getAllEpisodes = async () => {
-    const { data } = await this.API.get<IGetAllEpisodesSuccess>(
-      RickAndMortyEndpoint.Episodes
-    );
+  getAllEpisodes = async (page?: number) => {
+    let data = null;
+
+    if (page) {
+      data = (
+        await this.API.get<IGetAllEpisodesSuccess>(
+          addOptionalQueryParametersToUrl(RickAndMortyEndpoint.Episodes, {
+            page,
+          })
+        )
+      ).data;
+    } else {
+      data = (
+        await this.API.get<IGetAllEpisodesSuccess>(
+          RickAndMortyEndpoint.Episodes
+        )
+      ).data;
+    }
+
     return data;
   };
 

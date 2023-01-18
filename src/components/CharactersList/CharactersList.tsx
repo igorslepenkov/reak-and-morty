@@ -10,7 +10,7 @@ export const CharactersList = ({ characters }: IProps) => {
   return (
     <Grid
       container
-      spacing={10}
+      spacing={5}
       sx={{
         alignItems: "baseline",
         justifyContent: "center",

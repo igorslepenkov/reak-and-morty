@@ -21,6 +21,10 @@ export const Homepage = () => {
   const navigateToCharacters = () => {
     navigate(ROUTE.Characters);
   };
+  const navigateToLocations = () => {
+    navigate(ROUTE.Locations);
+  };
+
   return (
     <Page
       styles={{
@@ -48,7 +52,7 @@ export const Homepage = () => {
             </ListItemButton>
           </ListItem>
           <ListItem>
-            <ListItemButton>
+            <ListItemButton onClick={navigateToLocations}>
               <ListItemIcon>
                 <MapIcon />
               </ListItemIcon>
