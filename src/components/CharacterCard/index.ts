@@ -1,3 +1,3 @@
-import { CharactersList } from "../CharactersList";
+import { CharacterCard } from "./CharacterCard";
 
-export { CharactersList };
+export { CharacterCard };

@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import { ICharacter } from "../../types/characters";
-import { CharacterCard } from "../CharacterCard/CharacterCard";
+import { CharacterCard } from "../CharacterCard";
 
 interface IProps {
   characters: ICharacter[];

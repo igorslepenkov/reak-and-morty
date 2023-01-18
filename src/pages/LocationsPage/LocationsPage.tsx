@@ -1,11 +1,11 @@
-import { useEffect } from "react";
-import { LocationsList, Page } from "../../components";
-import { useAppSelector } from "../../store";
-import { useDispatch } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 import { Pagination } from "@mui/material";
 import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
+
+import { LocationsList, Page } from "../../components";
+import { useAppDispatch, useAppSelector } from "../../store";
 import {
   fetchLocationsStart,
   selectLocations,
@@ -21,7 +21,7 @@ export const LocationsPage = () => {
 
   const locations = useAppSelector(selectLocations);
   const locationsInfo = useAppSelector(selectLocationsInfo);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchLocationsStart(currentPage));

@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
-// import { useDispatch } from "react-redux";
 
 import { Grid, Pagination } from "@mui/material";
 import { Box } from "@mui/system";
 
 import { Page, EpisodesList } from "../../components";
-
 import { useAppDispatch, useAppSelector } from "../../store";
-
 import {
   selectEpisodes,
   fetchEpisodesStart,

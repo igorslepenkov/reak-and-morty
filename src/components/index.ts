@@ -3,7 +3,7 @@ import { LinkWithoutStyles } from "./LinkWithoutStyles";
 import { Page } from "./Page";
 import { Spinner } from "./Spinner";
 import { CharactersList } from "./CharactersList";
-import { CharacterCard } from "./CharacterCard/CharacterCard";
+import { CharacterCard } from "./CharacterCard";
 import { LocationsList } from "./LocationsList";
 import { LocationCard } from "./LocationCard";
 import { EpisodesList } from "./EpisodesList";

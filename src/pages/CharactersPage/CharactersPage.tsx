@@ -1,16 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import { Pagination } from "@mui/material";
+import { Grid } from "@mui/material";
+import { Box } from "@mui/system";
+
 import { CharactersList, Page } from "../../components";
-import { useAppSelector } from "../../store";
-import { useDispatch } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../store";
 import {
   selectCharacters,
   fetchCharactersStart,
   selectCharactersInfo,
 } from "../../store/characters";
-import { useState } from "react";
-import { Pagination } from "@mui/material";
-import { Grid } from "@mui/material";
-import { Box } from "@mui/system";
 
 export const CharactersPage = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -21,7 +21,7 @@ export const CharactersPage = () => {
 
   const characters = useAppSelector(selectCharacters);
   const charactersInfo = useAppSelector(selectCharactersInfo);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchCharactersStart(currentPage));
