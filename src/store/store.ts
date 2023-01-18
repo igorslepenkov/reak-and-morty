@@ -1,17 +1,17 @@
-import { applyMiddleware, compose } from "@reduxjs/toolkit";
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { createStore } from "@reduxjs/toolkit";
-import createSagaMiddleware from "redux-saga";
-import { rootReducer, RootState } from "./rootReducer";
-import { rootSaga } from "./rootSaga";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { charactersSlice, locationsSlice, episodesSlice } from "./features";
 
-const sagaMiddleware = createSagaMiddleware();
-const composedEnhancers = compose(applyMiddleware(sagaMiddleware));
+const rootReducer = combineReducers({
+  characters: charactersSlice,
+  locations: locationsSlice,
+  episodes: episodesSlice,
+});
 
-export const store = createStore(rootReducer, undefined, composedEnhancers);
+export const store = configureStore({
+  reducer: rootReducer,
+});
 
-sagaMiddleware.run(rootSaga);
-
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>;
+// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;
-export const useAppDispatch: () => AppDispatch = useDispatch;
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

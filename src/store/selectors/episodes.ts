@@ -1,8 +1,8 @@
 import { createSelector } from "reselect";
-import { RootState } from "../rootReducer";
-import { IEpisodesState } from "./episodesReducers";
+import { RootState } from "../store";
+import { IEpisodesInitialState } from "../features";
 
-const selectEpisodesReducer = (state: RootState): IEpisodesState =>
+const selectEpisodesReducer = (state: RootState): IEpisodesInitialState =>
   state.episodes;
 
 export const selectEpisodes = createSelector(

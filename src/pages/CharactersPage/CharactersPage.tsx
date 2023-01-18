@@ -6,11 +6,8 @@ import { Box } from "@mui/system";
 
 import { CharactersList, Page } from "../../components";
 import { useAppDispatch, useAppSelector } from "../../store";
-import {
-  selectCharacters,
-  fetchCharactersStart,
-  selectCharactersInfo,
-} from "../../store/characters";
+import { fetchCharacters } from "../../store/features";
+import { selectCharacters, selectCharactersInfo } from "../../store/selectors";
 
 export const CharactersPage = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -24,7 +21,7 @@ export const CharactersPage = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchCharactersStart(currentPage));
+    dispatch(fetchCharacters(currentPage));
   }, [dispatch, currentPage]);
 
   return (

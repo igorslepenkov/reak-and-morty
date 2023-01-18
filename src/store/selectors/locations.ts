@@ -1,8 +1,8 @@
 import { createSelector } from "reselect";
-import { RootState } from "../rootReducer";
-import { ILocationsState } from "./locationsReducer";
+import { RootState } from "../store";
+import { ILocationsInitialState } from "../features";
 
-const selectLocationsReducer = (state: RootState): ILocationsState =>
+const selectLocationsReducer = (state: RootState): ILocationsInitialState =>
   state.locations;
 
 export const selectLocations = createSelector(

@@ -4,12 +4,10 @@ import { Grid, Pagination } from "@mui/material";
 import { Box } from "@mui/system";
 
 import { Page, EpisodesList } from "../../components";
+
 import { useAppDispatch, useAppSelector } from "../../store";
-import {
-  selectEpisodes,
-  fetchEpisodesStart,
-  selectEpisodesInfo,
-} from "../../store/episodes";
+import { fetchEpisodes } from "../../store/features";
+import { selectEpisodes, selectEpisodesInfo } from "../../store/selectors";
 
 export const EpisodesPage = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -23,7 +21,7 @@ export const EpisodesPage = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchEpisodesStart(currentPage));
+    dispatch(fetchEpisodes(currentPage));
   }, [dispatch, currentPage]);
 
   return (

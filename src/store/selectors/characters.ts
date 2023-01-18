@@ -1,8 +1,8 @@
 import { createSelector } from "reselect";
-import { RootState } from "../rootReducer";
-import { ICharactersState } from "./charactersReducer";
+import { ICharactersInitialState } from "../features";
+import { RootState } from "../store";
 
-const selectCharactersReducer = (state: RootState): ICharactersState =>
+const selectCharactersReducer = (state: RootState): ICharactersInitialState =>
   state.characters;
 
 export const selectCharacters = createSelector(

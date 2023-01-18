@@ -6,11 +6,9 @@ import { Box } from "@mui/system";
 
 import { LocationsList, Page } from "../../components";
 import { useAppDispatch, useAppSelector } from "../../store";
-import {
-  fetchLocationsStart,
-  selectLocations,
-  selectLocationsInfo,
-} from "../../store/locations";
+
+import { fetchLocations } from "../../store/features";
+import { selectLocations, selectLocationsInfo } from "../../store/selectors";
 
 export const LocationsPage = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -24,7 +22,7 @@ export const LocationsPage = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchLocationsStart(currentPage));
+    dispatch(fetchLocations(currentPage));
   }, [dispatch, currentPage]);
 
   return (
