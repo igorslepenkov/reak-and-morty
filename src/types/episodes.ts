@@ -1,10 +1,10 @@
 export interface IEpisode {
   id: number;
   name: string;
-  air_dat: string;
-  episod: string;
+  air_date: string;
+  episode: string;
   character: string[];
-  ur: string;
+  url: string;
   create: string;
 }
 

@@ -4,9 +4,12 @@ import {
   Route,
 } from "react-router-dom";
 import { App } from "../App";
-import { Homepage } from "../pages";
-import { CharactersPage } from "../pages/CharactersPage";
-import { LocationsPage } from "../pages/LocationsPage";
+import {
+  EpisodesPage,
+  Homepage,
+  CharactersPage,
+  LocationsPage,
+} from "../pages";
 import { ROUTE } from "./routes";
 
 export const appRouter = createBrowserRouter(
@@ -15,6 +18,7 @@ export const appRouter = createBrowserRouter(
       <Route index element={<Homepage />} />
       <Route path={ROUTE.Characters} element={<CharactersPage />} />
       <Route path={ROUTE.Locations} element={<LocationsPage />} />
+      <Route path={ROUTE.Episodes} element={<EpisodesPage />} />
     </Route>
   )
 );

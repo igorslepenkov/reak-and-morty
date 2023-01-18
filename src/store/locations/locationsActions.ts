@@ -32,11 +32,8 @@ export const fetchLocationsStart = withMatcher(
 );
 
 export const fetchLocationsSuccess = withMatcher(
-  (charactersResponse: IGetAllLocationSuccess): FetchLocationsSuccessAction =>
-    createActionObject(
-      LocationsActionType.FetchLocationsSuccess,
-      charactersResponse
-    )
+  (reponse: IGetAllLocationSuccess): FetchLocationsSuccessAction =>
+    createActionObject(LocationsActionType.FetchLocationsSuccess, reponse)
 );
 
 export const fetchLocationsFailed = withMatcher(

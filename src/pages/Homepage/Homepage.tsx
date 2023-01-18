@@ -18,12 +18,9 @@ import { ROUTE } from "../../router";
 
 export const Homepage = () => {
   const navigate = useNavigate();
-  const navigateToCharacters = () => {
-    navigate(ROUTE.Characters);
-  };
-  const navigateToLocations = () => {
-    navigate(ROUTE.Locations);
-  };
+  const navigateToCharacters = () => navigate(ROUTE.Characters);
+  const navigateToLocations = () => navigate(ROUTE.Locations);
+  const navigateToEpisodes = () => navigate(ROUTE.Episodes);
 
   return (
     <Page
@@ -60,7 +57,7 @@ export const Homepage = () => {
             </ListItemButton>
           </ListItem>
           <ListItem>
-            <ListItemButton>
+            <ListItemButton onClick={navigateToEpisodes}>
               <ListItemIcon>
                 <CameraRollIcon />
               </ListItemIcon>

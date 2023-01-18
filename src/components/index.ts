@@ -6,6 +6,8 @@ import { CharactersList } from "./CharactersList";
 import { CharacterCard } from "./CharacterCard/CharacterCard";
 import { LocationsList } from "./LocationsList";
 import { LocationCard } from "./LocationCard";
+import { EpisodesList } from "./EpisodesList";
+import { EpisodeCard } from "./EpisodesCard";
 
 export {
   Header,
@@ -16,4 +18,6 @@ export {
   CharacterCard,
   LocationsList,
   LocationCard,
+  EpisodesList,
+  EpisodeCard,
 };

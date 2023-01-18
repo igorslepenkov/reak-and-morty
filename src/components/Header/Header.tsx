@@ -5,12 +5,9 @@ import { LinkWithoutStyles } from "../LinkWithoutStyles";
 
 export const Header = () => {
   const navigate = useNavigate();
-  const navigateToCharacters = () => {
-    navigate(ROUTE.Characters);
-  };
-  const navigateToLocations = () => {
-    navigate(ROUTE.Locations);
-  };
+  const navigateToCharacters = () => navigate(ROUTE.Characters);
+  const navigateToLocations = () => navigate(ROUTE.Locations);
+  const navigateToEpisodes = () => navigate(ROUTE.Episodes);
   return (
     <AppBar position="static" color="secondary">
       <Toolbar>
@@ -24,7 +21,9 @@ export const Header = () => {
         <Button color="inherit" onClick={navigateToLocations}>
           Locations
         </Button>
-        <Button color="inherit">Episodes</Button>
+        <Button color="inherit" onClick={navigateToEpisodes}>
+          Episodes
+        </Button>
       </Toolbar>
     </AppBar>
   );

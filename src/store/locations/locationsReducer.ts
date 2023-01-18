@@ -14,7 +14,7 @@ export interface ILocationsState {
   readonly error: IError | null;
 }
 
-const lcoationsInitialState: ILocationsState = {
+const locationsInitialState: ILocationsState = {
   locations: [],
   info: null,
   isLoading: false,
@@ -22,7 +22,7 @@ const lcoationsInitialState: ILocationsState = {
 };
 
 export const locationsReducer = (
-  state = lcoationsInitialState,
+  state = locationsInitialState,
   action: AnyAction
 ): ILocationsState => {
   if (fetchLocationsStart.match(action)) {
